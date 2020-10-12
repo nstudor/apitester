@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
+        <link rel="icon"type="image/png" href="logo.png" />
         <title>API Tester</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-            <h5 class="my-0 mr-md-auto font-weight-normal">API Tester</h5>
+            <h5 class="my-0 mr-md-auto font-weight-normal"><img src="logo.png" style="width:40px; margin: -16px 8px;">API Tester</h5>
         </div>
         <form id="frm">
             <div class="container">
