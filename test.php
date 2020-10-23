@@ -34,8 +34,8 @@ switch ($_POST['tip']) {
 curl_setopt($handle, CURLOPT_URL, $url);
 curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($handle, CURLOPT_HTTPHEADER, $headArray);
-
-if ($data = curl_exec($handle) === false) {
+$data = curl_exec($handle);
+if ($data === false) {
     echo 'Curl error: ' . curl_error($handle);
 } else {
     echo $data;
