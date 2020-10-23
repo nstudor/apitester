@@ -76,7 +76,12 @@
                 $.post('test.php',
                         $('#frm').serialize(),
                         function (result, status, xhr) {
-                            $("#result").html(result);
+                            if(status=="success")
+                                $("#result").html(result);
+                            else {
+                                $("#result").html(status);
+                                console.log(xhr);
+                            }
                         }
                 );
             }

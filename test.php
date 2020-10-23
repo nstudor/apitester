@@ -14,8 +14,8 @@ if ($_POST['params'] != '')
 $headArray = explode("\n", $_POST['heads']);
 
 if ($_POST['json'] != '') {
-    $headArray[]='Content-Type:application/json';
-    $postArray=$_POST['json'];
+    $headArray[] = 'Content-Type:application/json';
+    $postArray = $_POST['json'];
 }
 
 switch ($_POST['tip']) {
@@ -35,9 +35,13 @@ curl_setopt($handle, CURLOPT_URL, $url);
 curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($handle, CURLOPT_HTTPHEADER, $headArray);
 
-$data = curl_exec($handle);
+if ($data = curl_exec($handle) === false) {
+    echo 'Curl error: ' . curl_error($handle);
+} else {
+    echo $data;
+}
+
 curl_close($handle);
-echo $data;
 
 function unserializeArea($data) {
     $data = explode("\n", $data);
@@ -48,4 +52,5 @@ function unserializeArea($data) {
     }
     return $res;
 }
+
 ?>
