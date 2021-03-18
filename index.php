@@ -64,6 +64,10 @@
                         <div id="result" class="text-monospace font-weight-bold">
                         </div>
                     </div>
+                    <div class="card-footer">
+                        <input type="checkbox" name="parsejson" value="1" id="parsejson">
+                        <label for="parsejson">Parse result as JSON</label>
+                    </div>
                 </div>
             </div>
         </form>

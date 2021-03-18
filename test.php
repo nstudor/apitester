@@ -38,7 +38,9 @@ $data = curl_exec($handle);
 if ($data === false) {
     echo 'Curl error: ' . curl_error($handle);
 } else {
-    echo $data;
+    if($_POST['parsejson']) {
+        echo jsonbeautify(json_encode(json_decode($data), JSON_PRETTY_PRINT));
+    } else echo $data;
 }
 
 curl_close($handle);
@@ -52,5 +54,11 @@ function unserializeArea($data) {
     }
     return $res;
 }
-
+function jsonbeautify($data) {
+    $data = nl2br($data);
+    $data = str_replace("    ", "|&nbsp;&nbsp;*", $data);
+    $data = str_replace("*|&nbsp;", "|&nbsp;", $data);
+    $data = str_replace("&nbsp;&nbsp;*", "--", $data);
+    echo $data;
+}
 ?>
